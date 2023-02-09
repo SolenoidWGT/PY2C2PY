@@ -1,0 +1,32 @@
+syntax = "proto3";
+// ../protobuf/bin/protoc --cpp_out=../c ./test.proto
+// ../protobuf/bin/protoc --grpc_out=../c --plugin=protoc-gen-grpc=/mnt/lustre/wangguoteng.p/grpc/grpc/cmake/build/grpc_cpp_plugin ./test.proto
+
+// pip install grpcio-tools==1.43.0  grpcio==1.43.0
+// python -m grpc_tools.protoc -I./protos --python_out=./python  --grpc_python_out=./python ./protos/test.proto
+package helloworld;
+
+
+message C_IN {
+   string ca = 1;
+}
+
+message C_OUT {
+   string cb = 1;
+}
+
+message PY_IN {
+   string pya = 1;
+}
+
+message PY_OUT {
+   string pyb = 1;
+}
+
+service C_rpc {
+  rpc c_do_something(C_IN) returns (C_OUT) {}
+}
+
+service Py_rpc {
+  rpc py_do_something(PY_IN) returns (PY_OUT) {}
+}

@@ -90,10 +90,10 @@ python/ray/_raylet.pyd
 *.VC.db
 *.VC.opendb
 
-# Protobuf-generated files
-*_pb2.py
-*.pb.h
-*.pb.cc
+# # Protobuf-generated files
+# *_pb2.py
+# *.pb.h
+# *.pb.cc
 
 # Ray cluster configuration
 scripts/nodes.txt
